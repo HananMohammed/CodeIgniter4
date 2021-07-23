@@ -30,8 +30,8 @@ class BlogModel extends Model
 //	protected $cleanValidationRules = true;
 
 	// Callbacks
-//	protected $allowCallbacks       = true;
-//	protected $beforeInsert         = [];
+	protected $allowCallbacks       = true;
+	protected $beforeInsert         = ['checkTitle', 'hashPassword'];
 //	protected $afterInsert          = [];
 //	protected $beforeUpdate         = [];
 //	protected $afterUpdate          = [];
@@ -39,4 +39,23 @@ class BlogModel extends Model
 //	protected $afterFind            = [];
 //	protected $beforeDelete         = [];
 //	protected $afterDelete          = [];
+
+    /** check Title
+     * @param array $data
+     * @return array
+     */
+    public function checkTitle(array $data){
+	    $newTitle = $data['data']['title'].'Extra data here ..........';
+        $data['data']['title'] = $newTitle;
+        return $data ;
+    }
+
+    /** hash Password
+     * @param array $data
+     * @return array
+     */
+    public function hashPassword(array $data){
+        $data['data']['password'] = password_hash( $data['data']['password'] , PASSWORD_DEFAULT);
+        return $data ;
+    }
 }
