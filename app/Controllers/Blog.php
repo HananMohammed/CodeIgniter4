@@ -11,9 +11,6 @@ class Blog extends BaseController
 {
 	public function index()
 	{
-        $connection = db_connect();
-	    $model = new CustomModel($connection);
-	    print_r($model->getPosts()); die;
         $posts = ["title1", "title2", "title3"];
         $data = ["meta_title" => 'Single Blog ', "title" => 'this is Blogs page', "posts" => $posts];
         return view('blog', $data);
