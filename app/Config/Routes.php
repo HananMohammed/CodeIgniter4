@@ -37,6 +37,7 @@ $routes->setAutoRoute(true);
 $routes->get('/', 'Home::index');
 $routes->add('/blog', 'Blog::index');
 $routes->add('/posts', 'Posts::index');
+$routes->add('/form', 'Form::index');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
