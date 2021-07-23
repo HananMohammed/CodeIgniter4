@@ -32,6 +32,13 @@
                 <?php endforeach; ?>
             </select>
         </div>
+        <div class="form-group">
+            <label for="date">date</label>
+            <input type="date" class="form-control" id="date" name="date" value="<?= set_value('date');?>">
+        </div>
+        <?php
+            print_r($_POST);
+        ?>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
