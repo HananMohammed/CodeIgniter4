@@ -17,11 +17,11 @@ class BlogModel extends Model
 	protected $allowedFields        = ['title', 'content'];
 
 	// Dates
-//	protected $useTimestamps        = false;
-//	protected $dateFormat           = 'datetime';
-//	protected $createdField         = 'created_at';
-//	protected $updatedField         = 'updated_at';
-//	protected $deletedField         = 'deleted_at';
+	protected $useTimestamps        = true;
+	protected $dateFormat           = 'datetime';
+	protected $createdField         = 'created_at';
+	protected $updatedField         = 'updated_at';
+	protected $deletedField         = 'deleted_at';
 
 	// Validation
 //	protected $validationRules      = [];
